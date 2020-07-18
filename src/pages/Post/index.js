@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import NavigationBar from "reusables/NavigationBar";
 import styled from "@emotion/styled";
-import { ChevronLeftIcon } from "reusables/Icons";
+import { CloseIcon } from "reusables/Icons";
+import CategoryBottomSheet from "./components/CategoryBottomSheet";
 
 export default ({ top, title, buttonText, backgroundImage }) => {
+  const [showBottomSheet, setShowBottomSheet] = useState(true);
   return (
     <Container>
       <NavigationBar
-        left={<ChevronLeftIcon />}
+        left={<CloseIcon />}
         title="New Story"
         right={<PostButton>Post</PostButton>}
       />
-      <CategoryButton>Select a category</CategoryButton>
-      <Textarea placeholder="Post anything, ask a question, share a tip. You can add tag with #" />
+      <CategoryButton onClick={() => setShowBottomSheet(prev => !prev)}>
+        Select a category
+      </CategoryButton>
+      <Textarea
+        onClick={() => setShowBottomSheet(false)}
+        placeholder="Post anything, ask a question, share a tip. You can add tag with #"
+      />
+      <CategoryBottomSheet show={showBottomSheet} />
     </Container>
   );
 };
@@ -32,11 +40,11 @@ const CategoryButton = styled.div`
 
 const Textarea = styled.textarea`
   width: 100%;
-  height: 80vh;
   background: transparent;
   border: none;
   font-size: ${({ theme }) => theme.fontSize.md};
   color: white;
+  min-height: 50vh;
 
   &:focus {
     outline: none;

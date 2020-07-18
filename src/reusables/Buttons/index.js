@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-export const Button = ({ children, onClick }) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+export const Button = ({ children, onClick, className }) => {
+  return (
+    <StyledButton onClick={onClick} className={className}>
+      {children}
+    </StyledButton>
+  );
 };
 
 const StyledButton = styled.button`
