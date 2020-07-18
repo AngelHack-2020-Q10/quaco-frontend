@@ -6,6 +6,7 @@ import { AppContext, useAppState } from "hooks/useAppState";
 // import logo from './logo.svg'
 import "App.css";
 import Home from "pages/Home/index";
+import Post from "pages/Post/index";
 import List from "pages/List";
 import theme from "utils/theme";
 
@@ -29,8 +30,11 @@ function App() {
               <Route path="/list">
                 <List />
               </Route>
+              <Route path="/post">
+                <Post />
+              </Route>
               <Route path="/">
-                <Home name="My name" />
+                <Home />
               </Route>
             </Switch>
           </Router>

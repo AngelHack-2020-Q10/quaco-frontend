@@ -9,11 +9,21 @@ html, body, #root, .App {
 .App {
   background: black;
   color: white;
-  padding: 24px;
+  padding: 24px 24px 70px;
+  font-size: 16px;
 }
 
 h1, h2, h3, p {
   margin: 0;
+}
+
+button {
+  border: none;
+  padding: 0;
+
+}
+button:focus {
+  outline: none;
 }
 
 .App-logo {

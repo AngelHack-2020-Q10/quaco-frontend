@@ -4,10 +4,16 @@ import styled from "@emotion/styled";
 import chevronRightIcon from "assets/icons/chevron-right.svg";
 import mapIcon from "assets/icons/map.svg";
 import pencilIcon from "assets/icons/edit.svg";
+import chevronLeftIcon from "assets/icons/chevron-left.svg";
+import closeIcon from "assets/icons/close.svg";
 
 export const MapIcon = () => <Icon src={mapIcon} alt="Map" />;
 export const ChevronRightIcon = () => <Icon src={chevronRightIcon} alt="Map" />;
 export const PencilIcon = () => <Icon src={pencilIcon} alt="Pencil" />;
+export const ChevronLeftIcon = () => (
+  <Icon src={chevronLeftIcon} alt="Pencil" />
+);
+export const CloseIcon = () => <Icon src={closeIcon} alt="Pencil" />;
 
 const Icon = styled.img`
   width: 24px;

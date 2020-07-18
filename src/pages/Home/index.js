@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
 import theme from "utils/theme";
 import useIntersection from "hooks/useIntersection";
@@ -17,6 +18,8 @@ import TrendingNow from "./components/TrendingNow";
 const Home = () => {
   const introRef = useRef(null);
   const isIntroShowing = useIntersection(introRef, 1);
+  let history = useHistory();
+
   return (
     <div>
       <IntroCard
@@ -46,7 +49,10 @@ const Home = () => {
         />
         <TrendingNow />
       </div>
-      <FloatWriteButton show={!isIntroShowing} />
+      <FloatWriteButton
+        show={!isIntroShowing}
+        onClick={() => history.push("/post")}
+      />
     </div>
   );
 };
