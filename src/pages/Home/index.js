@@ -18,7 +18,7 @@ import TrendingNow from "./components/TrendingNow";
 const Home = () => {
   const introRef = useRef(null);
   const isIntroShowing = useIntersection(introRef, 1);
-  let history = useHistory();
+  const history = useHistory();
 
   return (
     <div>

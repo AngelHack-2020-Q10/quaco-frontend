@@ -2,17 +2,35 @@ import React, { useState } from "react";
 import NavigationBar from "reusables/NavigationBar";
 import styled from "@emotion/styled";
 import { CloseIcon } from "reusables/Icons";
+import { useHistory } from "react-router-dom";
 import CategoryBottomSheet from "./components/CategoryBottomSheet";
+import { ToastProvider, useToasts } from "react-toast-notifications";
 
-export default ({ top, title, buttonText, backgroundImage }) => {
-  const [showBottomSheet, setShowBottomSheet] = useState(true);
+export default () => {
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
   const [category, setCategory] = useState("Select a category");
+  const history = useHistory();
+  const { addToast } = useToasts();
+
   return (
     <Container>
       <NavigationBar
-        left={<CloseIcon />}
+        left={
+          <div style={{ display: "flex" }} onClick={() => history.goBack()}>
+            <CloseIcon />
+          </div>
+        }
         title="New Story"
-        right={<PostButton>Post</PostButton>}
+        right={
+          <PostButton
+            onClick={() => {
+              addToast("Saved Successfully", { appearance: "success" });
+              history.push("/");
+            }}
+          >
+            Post
+          </PostButton>
+        }
       />
       <CategoryButton onClick={() => setShowBottomSheet(prev => !prev)}>
         {category}

@@ -4,7 +4,7 @@ html, body, #root, .App {
 }
 
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 .App {
@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, p {
 button {
   border: none;
   padding: 0;
+  background: transparent;
 
 }
 button:focus {

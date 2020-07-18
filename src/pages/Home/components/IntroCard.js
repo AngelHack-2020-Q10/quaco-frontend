@@ -61,7 +61,7 @@ const Profile = styled.div`
   span {
     font-size: ${({ theme }) => theme.fontSize.xs};
     background: ${({ theme }) => theme.rawColors.purple1};
-    padding: 3px 10px;
+    padding: 3px 9px;
     border-radius: 11px;
     position: absolute;
     bottom: -3px;
