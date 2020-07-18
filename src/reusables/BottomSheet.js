@@ -20,12 +20,8 @@ export default class Modal extends React.Component {
   }
 
   render() {
-    if (!this.props.show) {
-      return null;
-    }
-
     return ReactDOM.createPortal(
-      <Container>
+      <Container show={this.props.show}>
         <Contents>{this.props.children}</Contents>
         <div>
           <StyledButton>{this.props.buttonText}</StyledButton>
@@ -55,4 +51,7 @@ const Container = styled.div`
   padding: 24px;
   display: flex;
   flex-direction: column;
+  transform: ${props => (props.show ? "none" : "translateY(65vh)")};
+  opacity: ${props => (props.show ? 1 : 0)};
+  transition: transform 0.2s ease, opacity 0.2s ease;
 `;
