@@ -2,7 +2,7 @@ import React from "react";
 import { MapIcon } from "reusables/Icons";
 import Divider from "reusables/Divider";
 import styled from "@emotion/styled";
-import { css, cx } from "emotion";
+import { css } from "emotion";
 
 export default ({ top, title, buttonText, backgroundImage }) => {
   return (
@@ -25,4 +25,6 @@ export default ({ top, title, buttonText, backgroundImage }) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  margin-top: 40px;
+`;

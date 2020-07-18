@@ -3,19 +3,16 @@ import { Button } from "reusables/Buttons";
 import styled from "@emotion/styled";
 
 export default ({ top, title, buttonText, backgroundImage }) => {
-  return (
-    <Container backgroundImage={backgroundImage}>
-      <div>{top}</div>
-      <h1>{title}</h1>
-      <Button>{buttonText}</Button>
-    </Container>
-  );
+  return <Card backgroundImage={backgroundImage}></Card>;
 };
 
-const Container = styled.div`
+const Card = styled.div`
+  width: 213px;
+  height: 291px;
+  border-radius: 10px;
   background: url("${props =>
     props.backgroundImage}") no-repeat center center/cover;
-  height: 100vh;
-  margin: -20px -20px 0;
-  padding: 20px;
+  width: 183px;
+  height: 251px;
+  margin-right: 16px;
 `;
