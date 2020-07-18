@@ -11,11 +11,9 @@ import QuarantineChallengeSection from "./components/QuarantineChallengeSection"
 import QuarantineMateSection from "./components/QuarantineMateSection";
 import DoTogetherSection from "./components/DoTogetherSection";
 import AdCard from "reusables/AdCard";
+import TrendingNow from "./components/TrendingNow";
 
-const Home = ({ name }) => {
-  const { state, actions } = useAppContext();
-  console.log({ state, actions });
-
+const Home = () => {
   return (
     <div>
       <IntroCard
@@ -41,12 +39,7 @@ const Home = ({ name }) => {
         backgroundColor={theme.rawColors.blue1}
         image="https://user-images.githubusercontent.com/3839771/87845872-646be200-c906-11ea-96a4-f81128bd944d.png"
       />
-      {name}
-      <div>
-        <span>{state.count}</span>
-        <button onClick={actions.increment}> + </button>
-        <button onClick={actions.decrement}> - </button>
-      </div>
+      <TrendingNow />
     </div>
   );
 };
