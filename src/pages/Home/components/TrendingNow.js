@@ -1,11 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Section from "reusables/Section";
 import theme from "utils/theme";
-import StoryCard from "reusables/StoryCard";
-import VerticalScroll from "reusables/VerticalScroll";
-import ChallengeCard from "reusables/ChallengeCard";
-import Divider from "reusables/Divider";
 import { css } from "emotion";
 
 const DUMMY_DATA = [
@@ -20,7 +15,7 @@ const DUMMY_DATA = [
   "ozark",
 ];
 
-export default ({ top, title, buttonText, backgroundImage }) => {
+export default () => {
   return (
     <Container>
       <h2

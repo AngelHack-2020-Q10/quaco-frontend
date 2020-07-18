@@ -3,32 +3,34 @@ import { Button } from "reusables/Buttons";
 import styled from "@emotion/styled";
 import { css } from "emotion";
 
-export default ({ top, title, buttonText, backgroundImage }) => {
-  return (
-    <Container backgroundImage={backgroundImage}>
-      <Greeting>
-        <div
-          className={css`
-            line-height: 1.5em;
-          `}
-        >
-          Hi, Hyein
-          <br />
-          It’s almost over!{" "}
+export default React.forwardRef(
+  ({ top, title, buttonText, backgroundImage }, ref) => {
+    return (
+      <Container backgroundImage={backgroundImage}>
+        <Greeting>
+          <div
+            className={css`
+              line-height: 1.5em;
+            `}
+          >
+            Hi, Hyein
+            <br />
+            It’s almost over!{" "}
+          </div>
+          <Profile>
+            <Avatar imageSrc="https://woodgreen.org.uk/image/image/image/V8Iw3SL87ubcIekoP1DmmhekPFXPNbBL5yB4JpVR.jpeg?w=800&h=422&fit=crop-center" />
+            <span>D-3</span>
+          </Profile>
+        </Greeting>
+        <div ref={ref}>
+          <div>{top}</div>
+          <h1>{title}</h1>
+          <Button>{buttonText}</Button>
         </div>
-        <Profile>
-          <Avatar imageSrc="https://woodgreen.org.uk/image/image/image/V8Iw3SL87ubcIekoP1DmmhekPFXPNbBL5yB4JpVR.jpeg?w=800&h=422&fit=crop-center" />
-          <span>D-3</span>
-        </Profile>
-      </Greeting>
-      <div>
-        <div>{top}</div>
-        <h1>{title}</h1>
-        <Button>{buttonText}</Button>
-      </div>
-    </Container>
-  );
-};
+      </Container>
+    );
+  },
+);
 
 const Container = styled.div`
   background: url("${props =>

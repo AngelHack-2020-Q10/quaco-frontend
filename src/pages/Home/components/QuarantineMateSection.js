@@ -1,12 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Section from "reusables/Section";
 import theme from "utils/theme";
-import StoryCard from "reusables/StoryCard";
 import VerticalScroll from "reusables/VerticalScroll";
-import ChallengeCard from "reusables/ChallengeCard";
-import Divider from "reusables/Divider";
-import { css } from "emotion";
 import MateAvatar from "reusables/MateAvatar";
 
 const DUMMY_DATA = [
@@ -32,16 +27,14 @@ const DUMMY_DATA = [
   },
 ];
 
-export default ({ top, title, buttonText, backgroundImage }) => {
+export default () => {
   return (
     <Section title="QurantineMate" color={theme.rawColors.purple1}>
       <VerticalScroll>
         {DUMMY_DATA.map(data => (
-          <MateAvatar image={data.image} dday={data.dday} />
+          <MateAvatar key={data.image} image={data.image} dday={data.dday} />
         ))}
       </VerticalScroll>
     </Section>
   );
 };
-
-const Container = styled.div``;

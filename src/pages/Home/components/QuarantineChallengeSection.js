@@ -1,12 +1,7 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Section from "reusables/Section";
-import theme from "utils/theme";
-import StoryCard from "reusables/StoryCard";
 import VerticalScroll from "reusables/VerticalScroll";
 import ChallengeCard from "reusables/ChallengeCard";
-import Divider from "reusables/Divider";
-import { css } from "emotion";
 
 const DUMMY_DATA = [
   {
@@ -29,12 +24,13 @@ const DUMMY_DATA = [
   },
 ];
 
-export default ({ top, title, buttonText, backgroundImage }) => {
+export default () => {
   return (
     <Section title="QuarantineChallenge" color="white">
       <VerticalScroll>
         {DUMMY_DATA.map(data => (
           <ChallengeCard
+            key={data.question}
             backgroundColor={data.backgroundColor}
             question={data.question}
             image={data.image}
@@ -44,5 +40,3 @@ export default ({ top, title, buttonText, backgroundImage }) => {
     </Section>
   );
 };
-
-const Container = styled.div``;

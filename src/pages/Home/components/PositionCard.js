@@ -4,7 +4,7 @@ import Divider from "reusables/Divider";
 import styled from "@emotion/styled";
 import { css } from "emotion";
 
-export default ({ top, title, buttonText, backgroundImage }) => {
+export default () => {
   return (
     <Container>
       <div

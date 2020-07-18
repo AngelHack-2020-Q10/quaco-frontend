@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "@emotion/styled";
 import Section from "reusables/Section";
 import theme from "utils/theme";
 import StoryCard from "reusables/StoryCard";
@@ -16,5 +15,3 @@ export default ({ top, title, buttonText, backgroundImage }) => {
     </Section>
   );
 };
-
-const Container = styled.div``;
