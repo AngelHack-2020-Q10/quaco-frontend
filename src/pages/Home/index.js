@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { useAppContext } from "hooks/useAppState";
 import IntroCard from "./components/IntroCard";
 import PositionCard from "./components/PositionCard";
+import PopularNowSection from "./components/PopularNowSection";
 
 const Home = ({ name }) => {
   const { state, actions } = useAppContext();
@@ -24,6 +25,7 @@ const Home = ({ name }) => {
         buttonText="Post my story"
       />
       <PositionCard />
+      <PopularNowSection />
       {name}
       <div>
         <span>{state.count}</span>
