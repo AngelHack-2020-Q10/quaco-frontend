@@ -22,6 +22,7 @@ const Wrapper = styled.div`
     position: absolute;
     bottom: -5px;
     right: 10px;
+    font-weight: bold;
   }
 `;
 

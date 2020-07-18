@@ -1,6 +1,11 @@
 html, body, #root, .App {
   min-height: 100%;
 }
+
+* {
+  box-sizing: content-box;
+}
+
 .App {
   background: black;
   color: white;
