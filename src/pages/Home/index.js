@@ -5,6 +5,7 @@ import { useAppContext } from "hooks/useAppState";
 import IntroCard from "./components/IntroCard";
 import PositionCard from "./components/PositionCard";
 import PopularNowSection from "./components/PopularNowSection";
+import HelpMeSection from "./components/HelpMeSection";
 
 const Home = ({ name }) => {
   const { state, actions } = useAppContext();
@@ -26,6 +27,7 @@ const Home = ({ name }) => {
       />
       <PositionCard />
       <PopularNowSection />
+      <HelpMeSection />
       {name}
       <div>
         <span>{state.count}</span>

@@ -7,7 +7,7 @@ const Divider = styled.div`
     rgba(255, 255, 255, 0) 0%
   );
   background-position: top;
-  background-size: 19px 3px;
+  background-size: 19px 2px;
   background-repeat: repeat-x;
   width: 100%;
   height: 5px;
