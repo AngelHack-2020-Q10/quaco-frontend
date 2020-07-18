@@ -1,5 +1,14 @@
+html, body, #root, .App {
+  min-height: 100%;
+}
 .App {
-  text-align: center;
+  background: black;
+  color: white;
+  padding: 24px;
+}
+
+h1, h2, h3 {
+  margin: 0;
 }
 
 .App-logo {

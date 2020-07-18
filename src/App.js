@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { AppContext, useAppState } from "./hooks/useAppState";
+import { AppContext, useAppState } from "hooks/useAppState";
 
 // import logo from './logo.svg'
-import "./App.css";
-import Home from "./pages/Home";
-import List from "./pages/List";
+import "App.css";
+import Home from "pages/Home/index";
+import List from "pages/List";
 
 function App() {
   const { state, actions } = useAppState();
@@ -14,14 +14,14 @@ function App() {
     <div className="App">
       <AppContext.Provider value={{ state, actions }}>
         <Router>
-          <ul>
+          {/* <ul>
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/list">List</Link>
             </li>
-          </ul>
+          </ul> */}
           <Switch>
             <Route path="/list">
               <List />

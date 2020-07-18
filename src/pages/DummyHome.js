@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { useAppContext } from "../hooks/useAppState";
+import { useAppContext } from "hooks/useAppState";
 
 const Home = ({ name }) => {
   const { state, actions } = useAppContext();
