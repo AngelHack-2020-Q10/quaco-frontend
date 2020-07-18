@@ -21,9 +21,11 @@ export default ({ top, title, buttonText, backgroundImage }) => {
           <span>D-3</span>
         </Profile>
       </Greeting>
-      <div>{top}</div>
-      <h1>{title}</h1>
-      <Button>{buttonText}</Button>
+      <div>
+        <div>{top}</div>
+        <h1>{title}</h1>
+        <Button>{buttonText}</Button>
+      </div>
     </Container>
   );
 };
@@ -31,9 +33,17 @@ export default ({ top, title, buttonText, backgroundImage }) => {
 const Container = styled.div`
   background: url("${props =>
     props.backgroundImage}") no-repeat center center/cover;
-  height: 100vh;
+  height: calc(100vh - 78px);
   margin: -20px -20px 0;
-  padding: 20px;
+  padding: 24px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h1 {
+    margin: 8px 0 24px;
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+  }
 `;
 
 const Greeting = styled.div`
