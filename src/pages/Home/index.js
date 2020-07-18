@@ -16,8 +16,8 @@ import TrendingNow from "./components/TrendingNow";
 
 const Home = () => {
   const elementRef = useRef(null);
-  const isIntroShowing = useIntersection(elementRef, 1);
-  console.log({ isIntroShowing });
+  const isContentsShowing = useIntersection(elementRef, 0.05);
+  console.log({ isContentsShowing });
   return (
     <div>
       <IntroCard
@@ -32,7 +32,7 @@ const Home = () => {
         }
         buttonText="Post my story"
       />
-      <div ref={elementRef} style={{ background: "grey" }}>
+      <div ref={elementRef}>
         <PositionCard />
         <PopularNowSection />
         <HelpMeSection />
@@ -46,8 +46,7 @@ const Home = () => {
         />
         <TrendingNow />
       </div>
-      {/* {!isIntroShowing && <FloatWriteButton />} */}
-      <FloatWriteButton />
+      <FloatWriteButton show={isContentsShowing} />
     </div>
   );
 };

@@ -2,8 +2,8 @@ import React from "react";
 import { PencilIcon } from "reusables/Icons";
 import styled from "@emotion/styled";
 
-const FloatWriteButton = () => (
-  <FloatButton>
+const FloatWriteButton = ({ show }) => (
+  <FloatButton show={show}>
     <PencilIcon />
   </FloatButton>
 );
@@ -18,6 +18,8 @@ const FloatButton = styled.button`
   right: 24px;
   padding: 0;
   border: none;
+  transform: ${props => (props.show ? "none" : "translateY(80px)")};
+  transition: transform 0.3s ease;
 `;
 
 export default FloatWriteButton;
