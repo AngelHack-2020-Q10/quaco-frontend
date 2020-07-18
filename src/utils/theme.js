@@ -12,6 +12,14 @@ const theme = {
   colors: {
     primary: rawColors.green1,
   },
+  fontSize: {
+    xs: "14px",
+    sm: "16px",
+    md: "18px",
+    lg: "20px",
+    xl: "24px",
+    xxl: "32px",
+  },
 };
 
 export default theme;

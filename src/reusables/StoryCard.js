@@ -6,8 +6,6 @@ export default ({ top, title, buttonText, backgroundImage }) => {
 };
 
 const Card = styled.div`
-  width: 213px;
-  height: 291px;
   border-radius: 10px;
   background: url("${props =>
     props.backgroundImage}") no-repeat center center/cover;
