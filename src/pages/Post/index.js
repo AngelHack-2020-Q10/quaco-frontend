@@ -6,6 +6,7 @@ import CategoryBottomSheet from "./components/CategoryBottomSheet";
 
 export default ({ top, title, buttonText, backgroundImage }) => {
   const [showBottomSheet, setShowBottomSheet] = useState(true);
+  const [category, setCategory] = useState("Select a category");
   return (
     <Container>
       <NavigationBar
@@ -14,13 +15,19 @@ export default ({ top, title, buttonText, backgroundImage }) => {
         right={<PostButton>Post</PostButton>}
       />
       <CategoryButton onClick={() => setShowBottomSheet(prev => !prev)}>
-        Select a category
+        {category}
       </CategoryButton>
       <Textarea
         onClick={() => setShowBottomSheet(false)}
         placeholder="Post anything, ask a question, share a tip. You can add tag with #"
       />
-      <CategoryBottomSheet show={showBottomSheet} />
+      <CategoryBottomSheet
+        show={showBottomSheet}
+        onClickCategory={value => {
+          setCategory(value);
+          setShowBottomSheet(false);
+        }}
+      />
     </Container>
   );
 };
