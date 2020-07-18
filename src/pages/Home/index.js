@@ -7,6 +7,7 @@ import PositionCard from "./components/PositionCard";
 import PopularNowSection from "./components/PopularNowSection";
 import HelpMeSection from "./components/HelpMeSection";
 import QuarantineChallengeSection from "./components/QuarantineChallengeSection";
+import QuarantineMateSection from "./components/QuarantineMateSection";
 
 const Home = ({ name }) => {
   const { state, actions } = useAppContext();
@@ -30,6 +31,7 @@ const Home = ({ name }) => {
       <PopularNowSection />
       <HelpMeSection />
       <QuarantineChallengeSection />
+      <QuarantineMateSection />
       {name}
       <div>
         <span>{state.count}</span>
