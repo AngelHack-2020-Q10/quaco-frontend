@@ -6,7 +6,7 @@ import { css } from "emotion";
 export default React.forwardRef(
   ({ top, title, buttonText, backgroundImage }, ref) => {
     return (
-      <Container backgroundImage={backgroundImage}>
+      <Container backgroundImage={backgroundImage} ref={ref}>
         <Greeting>
           <div
             className={css`
@@ -22,7 +22,7 @@ export default React.forwardRef(
             <span>D-3</span>
           </Profile>
         </Greeting>
-        <div ref={ref}>
+        <div>
           <div>{top}</div>
           <h1>{title}</h1>
           <Button>{buttonText}</Button>

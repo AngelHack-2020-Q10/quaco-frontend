@@ -15,12 +15,12 @@ import FloatWriteButton from "reusables/Buttons/FloatWriteButton";
 import TrendingNow from "./components/TrendingNow";
 
 const Home = () => {
-  const elementRef = useRef(null);
-  const isContentsShowing = useIntersection(elementRef, 0.05);
-  console.log({ isContentsShowing });
+  const introRef = useRef(null);
+  const isIntroShowing = useIntersection(introRef, 1);
   return (
     <div>
       <IntroCard
+        ref={introRef}
         top="Today’s Challenge"
         backgroundImage="https://user-images.githubusercontent.com/3839771/87841999-43929500-c8e4-11ea-8968-a2b1f2c24102.png"
         title={
@@ -32,7 +32,7 @@ const Home = () => {
         }
         buttonText="Post my story"
       />
-      <div ref={elementRef}>
+      <div>
         <PositionCard />
         <PopularNowSection />
         <HelpMeSection />
@@ -46,7 +46,7 @@ const Home = () => {
         />
         <TrendingNow />
       </div>
-      <FloatWriteButton show={isContentsShowing} />
+      <FloatWriteButton show={!isIntroShowing} />
     </div>
   );
 };
