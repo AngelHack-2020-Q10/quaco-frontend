@@ -20,12 +20,14 @@ export default ({ top, title, buttonText, backgroundImage }) => {
         right={<SearchIcon />}
       />
       <StyledStoryCard backgroundImage="https://user-images.githubusercontent.com/3839771/87868934-12928d00-c9d6-11ea-836f-177c41842e3d.jpg" />
+      <StyledStoryCard text="My favorite drink is Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor" />
     </Container>
   );
 };
 
 const StyledStoryCard = styled(StoryCard)`
-  height: 400px;
+  height: ${props => (props.backgroundImage ? "400px" : "auto")};
+  margin-bottom: 32px;
 `;
 
 const Container = styled.div``;

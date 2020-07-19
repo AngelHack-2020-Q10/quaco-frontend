@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-export default ({ className, backgroundImage }) => {
+export default ({ className, backgroundImage, text }) => {
   return (
     <Card backgroundImage={backgroundImage} className={className}>
       <Upper>
@@ -14,6 +14,11 @@ export default ({ className, backgroundImage }) => {
         </div>
         <Timestamp>3m</Timestamp>
       </Upper>
+      {text}
+      <Bottom>
+        <Likes>👍 12</Likes>
+        <Comments>💬 10</Comments>
+      </Bottom>
     </Card>
   );
 };
@@ -21,13 +26,17 @@ export default ({ className, backgroundImage }) => {
 const Card = styled.div`
   border-radius: 10px;
   padding: 16px;
-  background: url("${props =>
+  background: #0d1712 url("${props =>
     props.backgroundImage}") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
 `;
 const Upper = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 17px;
 `;
 const UserInfo = styled.div``;
 const Avatar = styled.img`
@@ -44,3 +53,16 @@ const DDayBadge = styled.span`
   border-radius: 9px;
 `;
 const Timestamp = styled.div``;
+
+const Bottom = styled.div`
+  margin-top: 16px;
+`;
+const IconContainer = styled.span`
+  background-color: #0000008c;
+  border-radius: 16px;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 14px;
+`;
+const Likes = styled(IconContainer)``;
+const Comments = styled(IconContainer)``;
