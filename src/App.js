@@ -16,6 +16,7 @@ import List from "pages/List";
 import Toast from "reusables/Toast";
 import theme from "utils/theme";
 import Signup from "pages/Signup";
+import TypeQuarantineDate from "pages/TypeQuarantineDate";
 import Posts from "pages/Posts";
 
 function ScrollToTop() {
@@ -59,6 +60,9 @@ function App() {
                 </Route>
                 <Route path="/signup">
                   <Signup />
+                </Route>
+                <Route path="/quarantine-date">
+                  <TypeQuarantineDate />
                 </Route>
                 <Route path="/post">
                   <Post />
