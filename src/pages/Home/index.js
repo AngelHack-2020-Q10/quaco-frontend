@@ -35,7 +35,7 @@ const Home = () => {
   const loginUserName = store.user ? store.user.name : "";
   const remainingDate = store.quarantineStartDate
     ? countRemainingDate(store.quarantineStartDate)
-    : "0";
+    : "";
 
   return (
     <div>

@@ -30,7 +30,7 @@ export default React.forwardRef(
           </div>
           <Profile>
             <Avatar imageSrc={profileImage} />
-            <span>D-{remainingDate}</span>
+            {remainingDate != null && <span>D-{remainingDate}</span>}
           </Profile>
         </Greeting>
         <div>
