@@ -52,7 +52,9 @@ const DDayBadge = styled.span`
   padding: 2px 6px;
   border-radius: 9px;
 `;
-const Timestamp = styled.div``;
+const Timestamp = styled.div`
+  font-size: 12px;
+`;
 
 const Bottom = styled.div`
   margin-top: 16px;
