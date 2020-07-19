@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider } from "emotion-theming";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import { ToastProvider } from "react-toast-notifications";
 
 import { AppContext, useAppState } from "hooks/useAppState";
-// import logo from './logo.svg'
 import "App.css";
 import Home from "pages/Home/index";
 import Post from "pages/Post/index";
@@ -13,6 +17,16 @@ import Toast from "reusables/Toast";
 import theme from "utils/theme";
 import Signup from "pages/Signup";
 import Posts from "pages/Posts";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   const { state, actions } = useAppState();
@@ -27,6 +41,7 @@ function App() {
             autoDismissTimeout={2000}
           >
             <Router>
+              <ScrollToTop />
               {/* <ul>
             <li>
               <Link to="/">Home</Link>
