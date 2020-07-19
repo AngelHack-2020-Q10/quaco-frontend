@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { MapIcon } from "reusables/Icons";
 import Divider from "reusables/Divider";
+import MapBottomSheet from "./MapBottomSheet";
 import styled from "@emotion/styled";
 import { css } from "emotion";
 import useGeolocation from "react-hook-geolocation";
 
 export default () => {
   const [regionValue, setRegionValue] = useState(null);
+  const [showBottomSheet, setShowBottomSheet] = useState(false);
   const geolocation = useGeolocation();
 
   useEffect(() => {
@@ -35,9 +37,12 @@ export default () => {
           <br />
           {regionValue} (+1km)
         </h2>
-        <MapIcon />
+        <div onClick={() => setShowBottomSheet(prev => !prev)}>
+          <MapIcon />
+        </div>
       </div>
       <Divider color="white" />
+      <MapBottomSheet show={showBottomSheet} />
     </Container>
   );
 };

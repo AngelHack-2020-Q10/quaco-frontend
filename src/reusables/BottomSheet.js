@@ -21,11 +21,13 @@ export default class Modal extends React.Component {
 
   render() {
     return ReactDOM.createPortal(
-      <Container show={this.props.show}>
+      <Container show={this.props.show} height={this.props.height || "55vh"}>
         <Contents>{this.props.children}</Contents>
-        <div>
-          <StyledButton>{this.props.buttonText}</StyledButton>
-        </div>
+        {this.props.buttonText && (
+          <div>
+            <StyledButton>{this.props.buttonText}</StyledButton>
+          </div>
+        )}
       </Container>,
       this.el,
     );
@@ -43,7 +45,7 @@ const Container = styled.div`
   position: fixed;
   background: #2a2a2a;
   bottom: 0;
-  height: 55vh;
+  height: ${({ height }) => height};
   right: 0;
   left: 0;
   border-radius: 30px 30px 0 0;
