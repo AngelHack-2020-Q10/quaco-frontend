@@ -1,9 +1,21 @@
 # Quaco (Frontend)
 
+![Meta_Image](https://user-images.githubusercontent.com/3839771/87867588-78c4e300-c9c9-11ea-9567-6176c57812a3.png)
+
+
 https://quaco-frontend-milooy.endpoint.ainize.ai/
+
+## 로컬에서 띄우기
+```
+yarn
+yarn dev
+```
 
 ## 빌드 및 도커 올리기
 ```
+# 리액트 빌드
+yarn build
+
 # 도커 빌드
 docker build -t jayjinjay/quaco-frontend .
 

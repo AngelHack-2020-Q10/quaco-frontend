@@ -1,9 +1,16 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { useHistory } from "react-router-dom";
 
 export default ({ className, backgroundImage, text }) => {
+  const history = useHistory();
+
   return (
-    <Card backgroundImage={backgroundImage} className={className}>
+    <Card
+      backgroundImage={backgroundImage}
+      className={className}
+      onClick={() => history.push("/post-detail")}
+    >
       <Upper>
         <div style={{ display: "flex" }}>
           <Avatar src="https://user-images.githubusercontent.com/3839771/87869007-dca1d880-c9d6-11ea-9dd8-d7c46a96e09c.png" />

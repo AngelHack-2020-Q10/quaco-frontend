@@ -18,6 +18,7 @@ import theme from "utils/theme";
 import Signup from "pages/Signup";
 import TypeQuarantineDate from "pages/TypeQuarantineDate";
 import Posts from "pages/Posts";
+import PostDetail from "pages/PostDetail";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,6 +67,9 @@ function App() {
                 </Route>
                 <Route path="/post">
                   <Post />
+                </Route>
+                <Route path="/post-detail">
+                  <PostDetail />
                 </Route>
                 <Route path="/">
                   <Signup />
