@@ -39,7 +39,7 @@ function App() {
                 <Route path="/list">
                   <List />
                 </Route>
-                <Route path="/posts/:id">
+                <Route path="/posts/:topic">
                   <Posts />
                 </Route>
                 <Route path="/signup">

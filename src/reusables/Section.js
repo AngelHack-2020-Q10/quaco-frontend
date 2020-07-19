@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "@emotion/styled";
+import { useHistory } from "react-router-dom";
 
 import { ReactComponent as ChevronRightIcon } from "assets/icons/chevron-right.svg";
 
 export default ({ title, color, children }) => {
+  const history = useHistory();
   return (
     <Container>
-      <TitleContainer color={color}>
+      <TitleContainer
+        color={color}
+        onClick={() => history.push(`/posts/${title}`)}
+      >
         <h2>#{title}</h2>
         <ChevronRightIcon />
       </TitleContainer>
