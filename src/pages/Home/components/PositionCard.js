@@ -44,7 +44,7 @@ export default () => {
         </div>
       </div>
       <Divider color="white" />
-      <MapBottomSheet show={showBottomSheet} latlng={latlng} />
+      {/* <MapBottomSheet show={showBottomSheet} latlng={latlng} /> */}
     </Container>
   );
 };

@@ -1,7 +1,25 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
+import styled from "@emotion/styled";
+import { ReactComponent as PinIcon } from "assets/icons/map-pin-green.svg";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+// const AnyReactComponent = ({ text }) => <Marker>{text}</Marker>;
+const AnyReactComponent = ({ text }) => (
+  <div>
+    <PinIcon />
+    <MarkerArea />
+  </div>
+);
+
+const MarkerArea = styled.div`
+  width: 250px;
+  height: 250px;
+  background-color: #00d06c7a;
+  border-radius: 50%;
+  position: absolute;
+  top: -120px;
+  left: -110px;
+`;
 
 export default class SimpleMap extends Component {
   render() {
