@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ReactComponent as ChevronRightIcon } from "assets/icons/chevron-right.svg";
 import styled from "@emotion/styled";
 import { useHistory } from "react-router-dom";
+import store from "store";
+import { saveQuarantineLogByGoogleAccountUuid } from "utils/firebase-db";
 
 const getFormatedDateString = () => {
   const date = new Date();
@@ -24,6 +26,18 @@ export default ({ top, title, buttonText, backgroundImage }) => {
     setDateValue(today);
   }, [today]);
 
+  // methods
+  const handleDateInput = async event => {
+    const selectedDate = event.target.value;
+    setDateValue(selectedDate);
+    try {
+      await saveQuarantineLogByGoogleAccountUuid(store.user.id, selectedDate);
+      history.push("/");
+    } catch (error) {
+      alert("서버에 문제가 생겼습니다. 잠시 후 다시 시도해주세요");
+    }
+  };
+
   console.log({ dateValue, today });
 
   return (
@@ -36,7 +50,7 @@ export default ({ top, title, buttonText, backgroundImage }) => {
         id="quarantine-start"
         name="quarantine-start"
         value={dateValue}
-        onChange={e => setDateValue(e.target.value)}
+        onChange={handleDateInput}
       />
       <NextButton>
         <ChevronRightIcon />

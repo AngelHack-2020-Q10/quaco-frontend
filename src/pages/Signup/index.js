@@ -3,18 +3,39 @@ import { GoogleIcon } from "reusables/Icons";
 import styled from "@emotion/styled";
 import { loginAccountWithGoogle } from "utils/firebase-util";
 import { useHistory } from "react-router-dom";
+import store from "store";
+import {
+  fetchQuarantineLogByGoogleAccountUuid,
+  checkIfQuarantineLogInsertedByGoogleAccountUuid,
+} from "utils/firebase-db";
 
 export default ({ top, title, buttonText, backgroundImage }) => {
   const history = useHistory();
 
   const loginWithGoogleAccount = async () => {
     try {
-      const response = await loginAccountWithGoogle();
-      console.log(response);
+      // save user information to store(state management)
+      const {
+        additionalUserInfo: { profile },
+      } = await loginAccountWithGoogle();
+      store.setUser(profile);
+      // check if the login user has already inserted the quarantine start date
+      const hasQuarantineLog = await checkIfQuarantineLogInsertedByGoogleAccountUuid(
+        profile.id,
+      );
+      console.log(hasQuarantineLog);
+      if (!hasQuarantineLog) {
+        history.push("type-quarantine");
+        return;
+      }
+      const { startDate } = await fetchQuarantineLogByGoogleAccountUuid(
+        profile.id,
+      );
+      store.setQuarantineStartDate(startDate);
       history.push("/");
     } catch (error) {
-      alert("Sorry, there's an error");
-      console.log({ error });
+      alert("서버에 문제가 생겼습니다. 잠시 후 다시 시도해주세요");
+      console.log(error);
     }
   };
 

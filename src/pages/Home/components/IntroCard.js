@@ -4,7 +4,18 @@ import styled from "@emotion/styled";
 import { css } from "emotion";
 
 export default React.forwardRef(
-  ({ top, title, buttonText, backgroundImage }, ref) => {
+  (
+    {
+      top,
+      title,
+      buttonText,
+      backgroundImage,
+      profileImage,
+      loginUserName,
+      remainingDate,
+    },
+    ref,
+  ) => {
     return (
       <Container backgroundImage={backgroundImage} ref={ref}>
         <Greeting>
@@ -13,13 +24,13 @@ export default React.forwardRef(
               line-height: 1.5em;
             `}
           >
-            Hi, Hyein
+            Hi, {loginUserName}
             <br />
             It’s almost over!{" "}
           </div>
           <Profile>
-            <Avatar imageSrc="https://woodgreen.org.uk/image/image/image/V8Iw3SL87ubcIekoP1DmmhekPFXPNbBL5yB4JpVR.jpeg?w=800&h=422&fit=crop-center" />
-            <span>D-3</span>
+            <Avatar imageSrc={profileImage} />
+            <span>D-{remainingDate}</span>
           </Profile>
         </Greeting>
         <div>

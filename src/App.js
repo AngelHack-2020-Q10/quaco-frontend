@@ -61,7 +61,7 @@ function App() {
                 <Route path="/signup">
                   <Signup />
                 </Route>
-                <Route path="/quarantine-date">
+                <Route path="/type-quarantine">
                   <TypeQuarantineDate />
                 </Route>
                 <Route path="/post">

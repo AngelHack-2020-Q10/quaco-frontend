@@ -15,10 +15,30 @@ import AdCard from "reusables/AdCard";
 import FloatWriteButton from "reusables/Buttons/FloatWriteButton";
 import TrendingNow from "./components/TrendingNow";
 
+// temp logic
+import store from "store";
+
+// date utils
+function countRemainingDate(dateString) {
+  const dday = new Date(dateString).getTime() + 60 * 60 * 24 * 14 * 1000;
+  const ddayDate = new Date(dday).getDate();
+  const todayDate = new Date().getDate();
+  return ddayDate - todayDate;
+}
+
 const Home = () => {
   const introRef = useRef(null);
   const isIntroShowing = useIntersection(introRef, 1);
   const history = useHistory();
+
+  // temp logic
+  const tempProfileImage =
+    "https://woodgreen.org.uk/image/image/image/V8Iw3SL87ubcIekoP1DmmhekPFXPNbBL5yB4JpVR.jpeg?w=800&h=422&fit=crop-center";
+  const profileImage = store.user ? store.user.picture : tempProfileImage;
+  const loginUserName = store.user ? store.user.name : "Hyejin";
+  const remainingDate = store.quarantineStartDate
+    ? countRemainingDate(store.quarantineStartDate)
+    : "14";
 
   return (
     <div>
@@ -26,6 +46,9 @@ const Home = () => {
         ref={introRef}
         top="Today’s Challenge"
         backgroundImage="https://user-images.githubusercontent.com/3839771/87841999-43929500-c8e4-11ea-8968-a2b1f2c24102.png"
+        profileImage={profileImage}
+        loginUserName={loginUserName}
+        remainingDate={remainingDate}
         title={
           <>
             What’s your favorite
