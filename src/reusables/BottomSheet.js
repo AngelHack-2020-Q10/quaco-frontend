@@ -53,7 +53,7 @@ const Container = styled.div`
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transform: ${props => (props.show ? "none" : "translateY(65vh)")};
+  transform: ${props => (props.show ? "none" : "translateY(100vh)")};
   opacity: ${props => (props.show ? 1 : 0)};
   transition: transform 0.2s ease, opacity 0.2s ease;
 `;

@@ -24,9 +24,13 @@ const MarkerArea = styled.div`
 export default class SimpleMap extends Component {
   render() {
     console.log(this.props.lat, this.props.lng);
+
+    if (!this.props.lat) {
+      return "";
+    }
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: "100vh", width: "100%" }}>
+      <div style={{ height: "70vh", width: "100%" }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: "AIzaSyDrx5BO-OfUWYDuqmhqFlXCKgMpaRLpbYI" }}
           defaultCenter={{

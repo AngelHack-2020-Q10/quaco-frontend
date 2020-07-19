@@ -6,13 +6,14 @@ import Divider from "reusables/Divider";
 import { SearchIcon, LocationIcon } from "reusables/Icons";
 import Map from "./Map";
 
-export default ({ show, latlng, onClickCategory }) => {
+export default ({ show, latlng, onClickSave }) => {
+  console.log({ latlng });
   const [isOpened, setIsOpened] = useState(false);
   return (
     <BottomSheet show={show} height="99vh">
       <TitleWrapper>
         <Title>Location</Title>
-        <SaveButton>Save</SaveButton>
+        <SaveButton onClick={onClickSave}>Save</SaveButton>
       </TitleWrapper>
       <Searcher>
         <SearchIcon />

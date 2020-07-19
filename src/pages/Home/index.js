@@ -28,7 +28,7 @@ function countRemainingDate(dateString) {
 
 const Home = () => {
   const introRef = useRef(null);
-  const isIntroShowing = useIntersection(introRef, 1);
+  const isIntroShowing = useIntersection(introRef, 0.8);
   const history = useHistory();
 
   const profileImage = store.user ? store.user.picture : "";
@@ -70,7 +70,7 @@ const Home = () => {
         <TrendingNow />
       </div>
       <FloatWriteButton
-        show={!isIntroShowing}
+        show={!isIntroShowing || false}
         onClick={() => history.push("/post")}
       />
     </div>
