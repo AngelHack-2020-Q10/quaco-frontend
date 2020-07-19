@@ -11,8 +11,8 @@ export default ({ backgroundColor, question, image }) => {
 };
 
 const Card = styled.div`
-  width: 110px;
-  height: 170px;
+  width: 140px;
+  height: 191px;
   border-radius: 10px;
   background: ${props => props.backgroundColor};
   margin-right: 16px;

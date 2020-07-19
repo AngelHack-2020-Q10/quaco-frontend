@@ -31,14 +31,11 @@ const Home = () => {
   const isIntroShowing = useIntersection(introRef, 1);
   const history = useHistory();
 
-  // temp logic
-  const tempProfileImage =
-    "https://woodgreen.org.uk/image/image/image/V8Iw3SL87ubcIekoP1DmmhekPFXPNbBL5yB4JpVR.jpeg?w=800&h=422&fit=crop-center";
-  const profileImage = store.user ? store.user.picture : tempProfileImage;
-  const loginUserName = store.user ? store.user.name : "Hyejin";
+  const profileImage = store.user ? store.user.picture : "";
+  const loginUserName = store.user ? store.user.name : "";
   const remainingDate = store.quarantineStartDate
     ? countRemainingDate(store.quarantineStartDate)
-    : "14";
+    : "0";
 
   return (
     <div>

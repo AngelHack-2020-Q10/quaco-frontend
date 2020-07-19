@@ -12,7 +12,6 @@ export default ({ title, backgroundColor, image }) => {
 };
 
 const Card = styled.div`
-  height: 54px;
   border-radius: 10px;
   color: black;
   background: ${props => props.backgroundColor};

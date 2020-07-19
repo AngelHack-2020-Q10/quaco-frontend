@@ -46,7 +46,7 @@ export default React.forwardRef(
 const Container = styled.div`
   background: url("${props =>
     props.backgroundImage}") no-repeat center center/cover;
-  height: calc(100vh - 78px);
+  height: 100vh;
   margin: -20px -20px 0;
   padding: 24px 24px 48px;
   display: flex;
@@ -60,25 +60,23 @@ const Container = styled.div`
 `;
 
 const Greeting = styled.div`
-  padding-bottom: 20px;
+  padding-bottom: 7px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff38;
   font-size: ${({ theme }) => theme.fontSize.lg};
 `;
 
 const Profile = styled.div`
   position: relative;
   span {
-    font-size: ${({ theme }) => theme.fontSize.xs};
-    background: ${({ theme }) => theme.rawColors.purple1};
+    font-size: 14px;
+    background: #c018ea;
     padding: 3px 9px;
     border-radius: 11px;
-    position: absolute;
-    bottom: -3px;
-    left: 2px;
+    bottom: 14px;
     font-weight: bold;
-    min-width: 30px;
+    position: relative;
   }
 `;
 const Avatar = styled.div`
