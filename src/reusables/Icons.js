@@ -10,6 +10,7 @@ import chevronBottomIcon from "assets/icons/chevron-bottom.svg";
 import closeIcon from "assets/icons/close.svg";
 import searchIcon from "assets/icons/search.svg";
 import googleIcon from "assets/icons/google.svg";
+import locationIcon from "assets/icons/current-location.svg";
 
 export const MapIcon = () => <Icon src={mapIcon} alt="Map" />;
 export const ChevronRightIcon = () => <Icon src={chevronRightIcon} alt="Map" />;
@@ -21,6 +22,7 @@ export const GoogleIcon = ({ className }) => (
 export const ChevronLeftIcon = () => (
   <Icon src={chevronLeftIcon} alt="Pencil" />
 );
+export const LocationIcon = () => <Icon src={locationIcon} alt="location" />;
 export const UpOrDownIcon = ({ isUp }) => (
   <Icon src={isUp ? chevronUpIcon : chevronBottomIcon} alt="Chevron" />
 );

@@ -8,6 +8,7 @@ import useGeolocation from "react-hook-geolocation";
 
 export default () => {
   const [regionValue, setRegionValue] = useState(null);
+  const [latlng, setLatLng] = useState({ lat: null, lng: null });
   const [showBottomSheet, setShowBottomSheet] = useState(false);
   const geolocation = useGeolocation();
 
@@ -19,6 +20,7 @@ export default () => {
 
     if (geolocation.latitude != null && regionValue === null) {
       setRegionValue("");
+      setLatLng({ lat: geolocation.latitude, lng: geolocation.longitude });
       getRegion(geolocation.latitude, geolocation.longitude);
     }
   }, [geolocation, regionValue]);
@@ -42,7 +44,7 @@ export default () => {
         </div>
       </div>
       <Divider color="white" />
-      <MapBottomSheet show={showBottomSheet} />
+      <MapBottomSheet show={showBottomSheet} latlng={latlng} />
     </Container>
   );
 };

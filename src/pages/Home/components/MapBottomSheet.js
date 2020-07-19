@@ -3,21 +3,59 @@ import styled from "@emotion/styled";
 import theme from "utils/theme";
 import BottomSheet from "reusables/BottomSheet";
 import Divider from "reusables/Divider";
-import { UpOrDownIcon } from "reusables/Icons";
+import { SearchIcon, LocationIcon } from "reusables/Icons";
+import Map from "./Map";
 
-export default ({ show, onClickCategory }) => {
+export default ({ show, latlng, onClickCategory }) => {
   const [isOpened, setIsOpened] = useState(false);
   return (
-    <BottomSheet show={show} height="90vh">
-      <Title>Location</Title>
-      <div>hi</div>
+    <BottomSheet show={show} height="99vh">
+      <TitleWrapper>
+        <Title>Location</Title>
+        <SaveButton>Save</SaveButton>
+      </TitleWrapper>
+      <Searcher>
+        <SearchIcon />
+        <input placeholder="Seoul" />
+        <LocationIcon />
+      </Searcher>
+      <Map {...latlng} />
     </BottomSheet>
   );
 };
 
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  align-items: center;
+`;
+
+const Searcher = styled.div`
+  display: flex;
+  padding: 10px 12px;
+  background: black;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    margin-left: 9px;
+}
+  }
+`;
+
 const Title = styled.h3`
   font-size: ${({ theme }) => theme.fontSize.md};
-  margin-bottom: 20px;
+`;
+
+const SaveButton = styled.button`
+  color: ${({ theme }) => theme.rawColors.green1};
+  font-size: 16px;
 `;
 
 const Category = styled.h4`
