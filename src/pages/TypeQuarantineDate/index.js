@@ -61,7 +61,6 @@ export default ({ top, title, buttonText, backgroundImage }) => {
 
 const Container = styled.div``;
 const DateInput = styled.input`
-  background: transparent;
   color: ${({ theme }) => theme.rawColors.green1};
   font-size: 28px;
   border: none;
