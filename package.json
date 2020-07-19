@@ -12,6 +12,7 @@
     "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "express": "^4.17.1",
+    "firebase": "^7.16.1",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
