@@ -9,11 +9,15 @@ import chevronUpIcon from "assets/icons/chevron-up.svg";
 import chevronBottomIcon from "assets/icons/chevron-bottom.svg";
 import closeIcon from "assets/icons/close.svg";
 import searchIcon from "assets/icons/search.svg";
+import googleIcon from "assets/icons/google.svg";
 
 export const MapIcon = () => <Icon src={mapIcon} alt="Map" />;
 export const ChevronRightIcon = () => <Icon src={chevronRightIcon} alt="Map" />;
 export const PencilIcon = () => <Icon src={pencilIcon} alt="Pencil" />;
-export const SearchIcon = () => <Icon src={searchIcon} alt="Pencil" />;
+export const SearchIcon = () => <Icon src={searchIcon} alt="Search" />;
+export const GoogleIcon = ({ className }) => (
+  <Icon className={className} src={googleIcon} alt="Google logo" />
+);
 export const ChevronLeftIcon = () => (
   <Icon src={chevronLeftIcon} alt="Pencil" />
 );
