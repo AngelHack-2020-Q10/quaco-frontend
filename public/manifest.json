@@ -1,6 +1,6 @@
 {
   "short_name": "Quaco",
-  "name": "Quaco - Keep distance but stay in touch",
+  "name": "Keep distance but stay in touch",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#00D06C",
+  "theme_color": "#000000",
   "background_color": "#000000"
 }
