@@ -11,6 +11,8 @@ import Post from "pages/Post/index";
 import List from "pages/List";
 import Toast from "reusables/Toast";
 import theme from "utils/theme";
+import Signup from "pages/Signup";
+import Posts from "pages/Posts";
 
 function App() {
   const { state, actions } = useAppState();
@@ -36,6 +38,12 @@ function App() {
               <Switch>
                 <Route path="/list">
                   <List />
+                </Route>
+                <Route path="/posts">
+                  <Posts />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
                 </Route>
                 <Route path="/post">
                   <Post />
