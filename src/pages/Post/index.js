@@ -25,7 +25,7 @@ export default () => {
           <PostButton
             onClick={() => {
               addToast("Saved Successfully", { appearance: "success" });
-              history.push("/");
+              history.push("/home");
             }}
           >
             Post

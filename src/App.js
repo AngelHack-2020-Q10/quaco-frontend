@@ -58,8 +58,8 @@ function App() {
                 <Route path="/posts/:topic">
                   <Posts />
                 </Route>
-                <Route path="/signup">
-                  <Signup />
+                <Route path="/home">
+                  <Home />
                 </Route>
                 <Route path="/type-quarantine">
                   <TypeQuarantineDate />
@@ -68,7 +68,7 @@ function App() {
                   <Post />
                 </Route>
                 <Route path="/">
-                  <Home />
+                  <Signup />
                 </Route>
               </Switch>
             </Router>

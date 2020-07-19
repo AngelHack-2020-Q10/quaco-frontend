@@ -32,7 +32,7 @@ export default ({ top, title, buttonText, backgroundImage }) => {
     setDateValue(selectedDate);
     try {
       await saveQuarantineLogByGoogleAccountUuid(store.user.id, selectedDate);
-      history.push("/");
+      history.push("/home");
     } catch (error) {
       alert("서버에 문제가 생겼습니다. 잠시 후 다시 시도해주세요");
     }

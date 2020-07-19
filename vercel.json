@@ -1,6 +1,6 @@
 {
   "routes": [
     { "src": "/posts", "dest": "/posts"},
-    { "src": "/signup", "dest": "/signup"}
+    { "src": "/home", "dest": "/home"}
   ]
 }
